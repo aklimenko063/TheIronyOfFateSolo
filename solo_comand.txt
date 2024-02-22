@@ -1,0 +1,243 @@
+git clone 
+
+1
+git pull
+git switch -c bogoslavskiy
+Добавить историю 1
+git add story.txt
+git commit -m "1. add story"
+git push --set-upstream origin bogoslavskiy
+git switch main
+git switch -c braginskiy
+git merge bogoslavskiy
+git push --set-upstream origin braginskiy
+
+2
+git switch braginskiy
+git pull
+Добавить пьессу
+git add play.txt
+git commit -m "2. add play"
+git push
+
+3
+git switch bogoslavskiy
+git pull
+Добавить историю 2
+git add story_2.txt
+git commit -m "3. add story_2"
+git push
+git switch braginskiy
+git pull
+git merge bogoslavskiy
+git push
+
+4
+git switch braginskiy
+git pull
+Удалить 2 истории
+git add .
+git commit -m "4. rm story1&story2"
+Внести изменения в play
+git commit -am "4. changes play"
+git push
+
+5
+git switch main
+git pull
+git switch -c ryazanov
+git merge braginskiy
+Внести изменения в play
+git add .
+git commit -am "5. changes play"
+git push --set-upstream origin ryazanov
+git switch braginskiy
+git pull
+git merge ryazanov
+git push
+
+6
+git switch ryazanov
+git pull
+Внести изменения в play
+git add play.txt
+git commit -am "6. changes play"
+git push
+git switch braginskiy
+git pull
+git merge ryazanov
+git push
+
+7
+git switch ryazanov
+git pull
+Добавить сценарий с текстом из пьессы
+git add scenario.txt
+git commit -am "7. add scenario"
+git push
+git switch braginskiy
+git pull
+git merge ryazanov
+git push
+git switch main
+git pull
+git merge ryazanov
+git push
+git switch ryazanov
+git pull
+git switch -c goskino
+git push --set-upstream origin goskino
+
+8
+git switch ryazanov
+git pull
+git switch -c tariverdiev
+Добавить музыку
+git add music.txt
+git commit -am "8. add music"
+git push --set-upstream origin tariverdiev
+git switch ryazanov
+git pull
+git merge tariverdiev
+git push
+git switch main
+git pull
+git merge tariverdiev
+git push
+
+9
+git switch ryazanov
+git pull
+Добавляем scenario_1 и scenario_2
+git add scenario_1.txt scenario_2.txt
+git commit -m "9. add scenario_1&scenario2"
+Удаляем старый сценарий
+git commit -m "9. rm scenario"
+git push
+git switch braginskiy
+git pull
+git merge ryazanov
+git push
+git switch main
+git pull
+git merge ryazanov
+git push
+
+10
+git switch bogoslavskiy
+git pull
+Добавить историю 3
+git add story_3.txt
+git commit -m "10. add story_3"
+git push
+git switch braginskiy
+git pull
+git merge bogoslavskiy
+Изменение scenario_2
+git commit -am "10. changes scenario_2"
+git push
+git switch main
+git pull
+git merge braginskiy
+git push
+
+11
+git switch braginskiy
+git pull
+Ищем номер последнего созданного изменения сценария. Он совпадает с HEAD.
+git log
+Возвращаем изменения
+git revert HEAD
+git push
+git switch main
+git pull
+git merge braginskiy
+git push
+
+12
+git switch ryazanov
+git pull
+Изменяем scenario_2
+git commit -am "12. changes scenario_2"
+git push
+git switch main
+git pull
+git merge ryazanov
+git push
+
+13
+git switch tariverdiev
+git pull
+git merge bogoslavskiy
+Ищем коммит с удалением историй "4. rm story1&story2"
+git log
+Отменяем этот коммит. Появляются все истории
+git revert 4a02a9a793a36ce4db289b66cd4df48df7eb2cc2
+git push
+
+14
+git switch ryazanov
+git pull
+git merge tariverdiev
+Изменение scenario_2
+git commit -am "14. changes scenario_2"
+git push
+git switch braginskiy
+git pull
+git merge ryazanov
+git push
+git switch main
+git pull
+git merge ryazanov
+git push
+
+15
+git switch ryazanov
+git pull
+git add roles.txt
+git commit -am "15. add roles"
+git push
+git switch main
+git pull
+git merge ryazanov
+git push
+git switch goskino
+git pull
+git merge main
+git push
+
+16
+git switch goskino
+git pull
+Изменяем roles
+git commit -am "16. add roles"
+git push
+git switch ryazanov
+git pull
+Изменяем roles
+git commit -am "16. add roles"
+git push
+
+17
+git switch main
+git pull
+git merge ryazanov
+git merge goskino
+Изменяем файл roles
+git commit -am "17. changes roles"
+git push
+
+18
+git switch main
+git pull
+git switch -c yakovlev
+git commit -am "18. changes scenario_2"
+git push --set-upstream origin yakovlev
+git switch ryazanov
+git pull
+git merge yakovlev
+git push
+git switch main
+git pull
+git merge yakovlev
+git push
